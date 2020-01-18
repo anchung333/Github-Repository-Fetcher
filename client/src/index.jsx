@@ -7,7 +7,7 @@ import RepoList from './components/RepoList.jsx';
 class App extends React.Component {
   constructor(props) {
     super(props);
-    this.state = { 
+    this.state = {
       repos: []
     }
 
@@ -16,6 +16,15 @@ class App extends React.Component {
   search (term) {
     console.log(`${term} was searched`);
     // TODO
+    //send POST request to /repos with the term in the req.body
+    $.ajax({
+      url: 'http://localhost:1128/repos',
+      type: 'POST',
+      contentType: 'application/json',
+      data: JSON.stringify({'term': term}),
+      success: () => console.log('POST REQUEST SUCCESSFULLY SENT TO SERVER'),
+      error:  (err) => console.log('ERROR SENDING POST REQUEST TO SERVER: ', err)
+    })
   }
 
   render () {
