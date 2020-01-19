@@ -1,0 +1,86 @@
+html {
+  font-family: Futura, "Trebuchet MS", Arial, sans-serif;
+  background-color: #dedede;
+}
+
+button {
+  font-family: Futura, "Trebuchet MS", Arial, sans-serif;
+  margin: 0px 0px 0px 3px;
+  border-radius: 5px;
+}
+
+header h1{
+  background-color: #000000;
+  color: #ffffff;
+  margin: 0;
+  border: 0;
+  padding: 0;
+}
+
+.title {
+  padding: 0px 0px 0px 5px;
+}
+
+.githubicon {
+  background-color: #ffffff;
+  background-image: url(https://image.flaticon.com/icons/svg/25/25231.svg);
+  padding: 0px 20px;
+  background-size: cover;
+  border-radius: 100px;
+}
+
+body {
+  padding: 0;
+  margin: 0
+}
+
+#app {
+  margin: 5px 0px 0px 0px;
+}
+
+.top25Container, .searchContainer {
+  padding: 0px;
+  margin: auto;
+}
+
+.searchContainer {
+  padding: 5px 0px 0px 0px;
+}
+
+.searchContainer {
+  text-align: center;
+}
+
+th, .top25Container, .tabletitle {
+  border: 2px solid #333;
+  border-radius: 5px
+}
+
+svg {
+  top: 50%;
+}
+
+input {
+  width: 150px;
+}
+
+.reporow{
+  text-align: left
+}
+
+tbody tr:nth-child(even) {
+  background-color: #eee;
+}
+
+.tabletitle, .rowtitles {
+  background-color: #3b3b3b;
+  color: #ffffff
+}
+
+.repoauthor {
+  text-align: center
+}
+
+.stars, .forks, .watch {
+  text-align: right
+}

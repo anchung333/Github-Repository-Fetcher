@@ -20,13 +20,13 @@ app.post('/repos', function (req, res) {
       res.send(err);
     } else {
       console.log(`SUCCESSFULLY RETRIEVED REPOS FOR ${username}! `);
-      database.save(data, (err) => {
+      database.save(data, (err, data) => {
         if (err) {
           console.log(`ERROR SAVING REPOS FOR ${username}!`);
           res.send(err);
         } else {
           console.log(`SUCCESSFULLY SAVED REPOS FOR ${username}!`);
-          res.status(201).send();
+          res.sendStatus(201);
         };
       })
     }
@@ -37,9 +37,15 @@ app.get('/repos', function (req, res) {
   // TODO - your code here!
   // This route should send back the top 25 repos
   // Mongoose CRUD helper methods return Query object - Query objects have sort() method
-  var top25Starred = database.retrieve25();
-  console.log('TOP 25 STARRED REPOS SUCCESSFULLY RETRIEVED!');
-  res.send(top25Starred);
+  database.retrieve25((err, data) => {
+    if (err) {
+      console.log('ERROR RETRIEVING REPOS: ', err);
+      res.send(err);
+    } else {
+      console.log('SUCCESSFULLY RETRIEVED REPOS FROM DATABASE');
+      res.status(200).send(data);
+    }
+  });
 });
 
 let port = 1128;
