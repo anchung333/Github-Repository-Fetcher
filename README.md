@@ -1,7 +1,7 @@
 # Github Repository Fetcher
 This is a project I completed as a student at [hackreactor](http://hackreactor.com).
 
-![demo](https://im4.ezgif.com/tmp/ezgif-4-13f490275af8.gif)
+![demo](githubfetcher.gif)
 
 ## Goals
 - Build a full-stack app that takes data from GitHub's API and stores it in a database.
