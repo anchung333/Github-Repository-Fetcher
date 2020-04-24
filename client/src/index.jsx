@@ -16,7 +16,6 @@ class App extends React.Component {
 
   search (term) {
     console.log(`${term} was searched`);
-    // TODO
     //send POST request to /repos with the term in the req.body
     $.ajax({
       url: 'http://localhost:1128/repos',

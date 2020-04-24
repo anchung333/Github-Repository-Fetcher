@@ -8,7 +8,6 @@ app.use(express.json());
 app.use(express.static(__dirname + '/../client/dist'));
 
 app.post('/repos', function (req, res) {
-  // TODO - your code here!
   // This route should take the github username provided
   // and get the repo information from the github API, then
   // save the repo information in the database
@@ -34,9 +33,7 @@ app.post('/repos', function (req, res) {
 });
 
 app.get('/repos', function (req, res) {
-  // TODO - your code here!
   // This route should send back the top 25 repos
-  // Mongoose CRUD helper methods return Query object - Query objects have sort() method
   database.retrieve25((err, data) => {
     if (err) {
       console.log('ERROR RETRIEVING REPOS: ', err);

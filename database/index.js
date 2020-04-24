@@ -2,7 +2,6 @@ const mongoose = require('mongoose');
 mongoose.connect('mongodb://localhost/fetcher');
 
 let repoSchema = mongoose.Schema({
-  // TODO: your schema here!
   "id": Number,
   "name": String,
   "owner": Object,
@@ -17,10 +16,9 @@ let repoSchema = mongoose.Schema({
 let Repo = mongoose.model('Repo', repoSchema);
 
 let save = (repoDataArray, cb) => {
-  // TODO: Your code here
   // This function should save a repo or repos to
   // the MongoDB
-  //also perform check for dup repos using repo id
+  // also perform check for dup repos using repo id
   console.log('SAVING REPO DATA...');
   var temp = [];
   for (let i = 0; i < repoDataArray.length; i++) {
@@ -39,7 +37,7 @@ let save = (repoDataArray, cb) => {
 }
 
 let retrieve25 = (cb) => {
-  //retrieve the entire database?
+  //retrieve the entire database
   //then sort the query object, and then take the top 25 most starred repos?
   var top25 = [];
   Repo.find({}, (err, data) => {
